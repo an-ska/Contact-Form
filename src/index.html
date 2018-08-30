@@ -8,6 +8,16 @@
   <script src='/bundle.js'></script>
 </head>
 <body>
-  <div>TEST</div>
+  <h1>Let's stay in touch</h1>
+  <form name="contact-form" role="form" aria-label="contact-form">
+    <label for="email">Email</label>
+    <input id="email" name="email" required="required" />
+    <label for="name">First name and last name</label>
+    <input id="name" name="name" />
+    <label for="phone">Phone</label>
+    <input id="phone" name="tel" required="required" />
+    <textarea id="message" name="message"></textarea>
+    <button type="submit" id="submit">Submit</button>
+  </form>
 </body>
 </html>
