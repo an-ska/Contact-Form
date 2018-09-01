@@ -84,6 +84,12 @@ const onFormSubmit = (event) => {
   if (validForm) {
     form.reset()
     successElement.innerHTML = "Thank you! Form was submitted"
+  } else {
+    const errorElements = [...document.querySelectorAll(".error")]
+    const firstInvalidField = errorElements.find(error => error.innerHTML.length > 0)
+
+    // firstInvalidField.scrollIntoView({behavior: "smooth"}) // smooth behaviour is not fully supported https://caniuse.com/#feat=scrollintoview
+    firstInvalidField.scrollIntoView()
   }
 }
 
