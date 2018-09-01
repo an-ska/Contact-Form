@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Contact Form</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-  <script src='/bundle.js'></script>
+  <script src="/bundle.js"></script>
 </head>
 <body>
-  <h1>Let's stay in touch</h1>
-  <form name="contact-form" role="form" aria-label="contact-form">
-    <label for="email">Email</label>
-    <input id="email" name="email" required="required" />
-    <label for="name">First name and last name</label>
-    <input id="name" name="name" />
-    <label for="phone">Phone</label>
-    <input id="phone" name="tel" required="required" />
-    <textarea id="message" name="message"></textarea>
-    <button type="submit" id="submit">Submit</button>
+  <h1 class="heading">Let's stay in touch</h1>
+  <form class="contactForm" id="contactForm" name="contact-form" role="form" aria-label="contact-form" novalidate>
+    <span class="success" id="success"></span>
+    <div class="column"
+      <label for="email">Email</label>
+      <input id="email" name="email" required />
+      <span class="error errorEmail" id="errorEmail"></span>
+      <label for="phone">Phone</label>
+      <input id="phone" name="tel" required />
+      <span class="error errorPhone" id="errorPhone"></span>
+      <label for="name">First name and last name</label>
+      <input id="name" name="name"/>
+      <span class="error errorName" id="errorName"></span>
+    </div>
+    <div class="column">
+      <textarea id="message" name="message" required></textarea>
+      <span class="error errorMessage" id="errorMessage"></span>
+    <button class="submit" id="submit">Submit</button>
   </form>
 </body>
 </html>
