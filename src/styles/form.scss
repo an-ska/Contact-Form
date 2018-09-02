@@ -76,6 +76,10 @@ textarea {
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
+
+  &:hover {
+    background: linear-gradient($gradientHover);
+  }
 }
 
 .errorField {
