@@ -10,13 +10,14 @@ const isEmailValid = () => {
   if (formValidation.isFieldEmpty(userEmail)) {
     setErrorMessage(container, "Please fill in the email field")
     setErrorField(container, true)
+    return false
   } else if (formValidation.isEmailInvalid(userEmail)) {
     setErrorMessage(container, "Please correct the email")
     setErrorField(container, true)
+    return false
   } else {
     setErrorMessage(container, "")
     setErrorField(container, false)
-
     return true
   }
 }
@@ -28,13 +29,14 @@ const isPhoneValid = () => {
   if (formValidation.isFieldEmpty(userPhone)) {
     setErrorMessage(container, "Please fill in the phone field")
     setErrorField(container, true)
+    return false
   } else if (formValidation.isPhoneInvalid(userPhone)) {
     setErrorMessage(container, "Please correct the phone")
     setErrorField(container, true)
+    return false
   } else {
     setErrorMessage(container, "")
     setErrorField(container, false)
-
     return true
   }
 }
@@ -46,10 +48,10 @@ const isNameValid = () => {
   if (formValidation.isNameInvalid(userName)) {
     setErrorMessage(container, "Please provide no more than 30 characters")
     setErrorField(container, true)
+    return false
   } else {
     setErrorMessage(container, "")
     setErrorField(container, false)
-
     return true
   }
 }
@@ -61,21 +63,22 @@ const isMessageValid = () => {
   if (formValidation.isFieldEmpty(userMessage)) {
     setErrorMessage(container, "Please fill in the message field")
     setErrorField(container, true)
+    return false
   } else if (formValidation.isMessageInvalid(userMessage)) {
     setErrorMessage(container, "Please provide no more than 300 characters")
     setErrorField(container, true)
+    return false
   } else {
     setErrorMessage(container, "")
     setErrorField(container, false)
-
     return true
   }
 }
 
-const validateForm = () => {
+const isFormValid = () => {
   const validEmail = isEmailValid()
   const validPhone = isPhoneValid()
-  const validName =  isNameValid()
+  const validName = isNameValid()
   const validMessage = isMessageValid()
 
   return (validEmail && validPhone && validName && validMessage)
@@ -98,9 +101,8 @@ const onFormSubmit = (event) => {
 
   const form = document.getElementById("contactForm")
   const successElement = document.getElementById("success")
-  const validForm = validateForm()
 
-  if (validForm) {
+  if (isFormValid()) {
     form.reset()
     successElement.innerHTML = "Thank you! Form was submitted"
   } else {
