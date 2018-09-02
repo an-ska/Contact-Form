@@ -1,3 +1,5 @@
+@import "variables";
+
 .wrapper {
   margin: 100px 0;
 }
@@ -66,7 +68,7 @@ button {
   border: none;
   padding: 10px;
   color: #FFF;
-  background: linear-gradient(30deg, #534da7, #25cedb);
+  background: linear-gradient($gradient);
   margin-top: 20px;
   font-size: 20px;
   text-transform: uppercase;
@@ -76,12 +78,18 @@ button {
 }
 
 .error {
-  color: #be4b49;
+  color: $error;
   font-size: 14px;
 }
 
 .errorField {
-  border: 1px solid #be4b49;
+  border: 1px solid $error;
+}
+
+.success {
+  color: $success;
+  font-size: 18px;
+  text-align: center;
 }
 
 @media(max-width: 800px) {
