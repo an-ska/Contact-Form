@@ -1,6 +1,6 @@
 @import "variables";
 
-.wrapper {
+.container {
   margin: 100px 0;
 }
 
@@ -63,7 +63,7 @@ textarea {
   grid-row: 1 / span 3;
 }
 
-button {
+.submit {
   border-radius: 0;
   border: none;
   padding: 10px;
@@ -75,15 +75,16 @@ button {
   border-radius: 0;
   font-weight: bold;
   letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.errorField {
+  border: 1px solid $error;
 }
 
 .error {
   color: $error;
   font-size: 14px;
-}
-
-.errorField {
-  border: 1px solid $error;
 }
 
 .success {
