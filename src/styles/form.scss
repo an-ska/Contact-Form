@@ -14,7 +14,7 @@
   display: grid;
   grid-gap: 20px;
   max-width: 700px;
-  padding: 30px 30px 50px;
+  padding: 20px 30px 60px;
   margin: 20px auto;
   background: #FFF;
   color: $darkFont;
@@ -24,7 +24,7 @@
 .columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-column-gap: 25px;
 }
 
 .inputGroup {
@@ -67,7 +67,6 @@ textarea {
 
 .submit {
   padding: 10px;
-  margin-top: 20px;
   border: none;
   border-radius: 0;
   background: linear-gradient($gradient);
@@ -93,6 +92,7 @@ textarea {
 }
 
 .success {
+  height: 20px;
   color: $success;
   font-size: 18px;
   text-align: center;
@@ -110,5 +110,9 @@ textarea {
 
   textarea {
     height: 200px;
+  }
+
+  .submit {
+    margin-top: 20px;
   }
 }
