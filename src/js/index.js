@@ -12,7 +12,7 @@ const isEmailValid = () => {
     markField(container)
     return false
   } else if (formValidation.isEmailInvalid(userEmail)) {
-    addErrorMessage(container, "Please correct the email")
+    addErrorMessage(container, "Please correct the email.")
     markField(container)
     return false
   } else {
@@ -27,11 +27,11 @@ const isPhoneValid = () => {
   const container = document.querySelector('[data-name="phone"]')
 
   if (formValidation.isFieldEmpty(userPhone)) {
-    addErrorMessage(container, "Please fill in the phone field")
+    addErrorMessage(container, "Please fill in the phone field.")
     markField(container)
     return false
   } else if (formValidation.isPhoneInvalid(userPhone)) {
-    addErrorMessage(container, "Please correct the phone in format xxxxxxxxx")
+    addErrorMessage(container, "Please correct the phone in format xxxxxxxxx.")
     markField(container)
     return false
   } else {
@@ -46,7 +46,7 @@ const isNameValid = () => {
   const container = document.querySelector('[data-name="name"]')
 
   if (formValidation.isNameInvalid(userName)) {
-    addErrorMessage(container, "Please provide no more than 30 characters")
+    addErrorMessage(container, "Please provide no more than 30 characters.")
     markField(container)
     return false
   } else {
@@ -61,11 +61,11 @@ const isMessageValid = () => {
   const container = document.querySelector('[data-name="message"]')
 
   if (formValidation.isFieldEmpty(userMessage)) {
-    addErrorMessage(container, "Please fill in the message field")
+    addErrorMessage(container, "Please fill in the message field.")
     markField(container)
     return false
   } else if (formValidation.isMessageInvalid(userMessage)) {
-    addErrorMessage(container, "Please provide no more than 300 characters")
+    addErrorMessage(container, "Please provide no more than 300 characters.")
     markField(container)
     return false
   } else {
@@ -116,7 +116,7 @@ const onFormSubmit = (event) => {
 
   if (isFormValid()) {
     form.reset()
-    successElement.innerHTML = "Thank you! Form was submitted"
+    successElement.innerHTML = "Thank you! Form was submitted."
   } else {
     const errorElements = [...document.querySelectorAll(".error")]
     const firstInvalidField = errorElements.find(error => error.innerHTML.length > 0)
