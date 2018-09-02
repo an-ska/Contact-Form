@@ -28,6 +28,7 @@
 }
 
 .inputGroup {
+  height: 100px;
   grid-column: 1 / 2;
 }
 
@@ -60,7 +61,7 @@ textarea {
 }
 
 textarea {
-  height: calc(100% - 25px);
+  height: calc(100% - 56px);
   resize: none;
 }
 
