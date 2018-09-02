@@ -16,7 +16,7 @@ const isEmailValid = () => {
     markField(container)
     return false
   } else {
-    removeErrorMessage(container, "")
+    removeErrorMessage(container)
     unmarkField(container)
     return true
   }
@@ -35,7 +35,7 @@ const isPhoneValid = () => {
     markField(container)
     return false
   } else {
-    removeErrorMessage(container, "")
+    removeErrorMessage(container)
     unmarkField(container)
     return true
   }
@@ -50,7 +50,7 @@ const isNameValid = () => {
     markField(container)
     return false
   } else {
-    removeErrorMessage(container, "")
+    removeErrorMessage(container)
     unmarkField(container)
     return true
   }
@@ -69,7 +69,7 @@ const isMessageValid = () => {
     markField(container)
     return false
   } else {
-    removeErrorMessage(container, "")
+    removeErrorMessage(container)
     unmarkField(container)
     return true
   }
@@ -90,10 +90,10 @@ const addErrorMessage = (container, message) => {
   errorElement.innerHTML = message
 }
 
-const removeErrorMessage = (container, message) => {
+const removeErrorMessage = (container) => {
   const errorElement = container.querySelector(".error")
 
-  errorElement.innerHTML = message
+  errorElement.innerHTML = ""
 }
 
 const markField = (container) => {
