@@ -50,7 +50,6 @@ textarea {
 }
 
 textarea {
-  min-height: 200px;
   height: calc(100% - 25px);
 }
 
@@ -101,5 +100,9 @@ textarea {
 
   .textareaGroup {
     grid-row: unset;
+  }
+
+  textarea {
+    height: 200px;
   }
 }
