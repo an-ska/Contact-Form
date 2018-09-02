@@ -7,13 +7,10 @@ const isEmailValid = () => {
   const userEmail = document.getElementById("email").value
   const container = document.querySelector('[data-name="email"]')
 
-  const emptyField = formValidation.checkIfEmptyField(userEmail)
-  const invalidField = formValidation.validateEmail(userEmail)
-
-  if (emptyField) {
+  if (formValidation.isFieldEmpty(userEmail)) {
     setErrorMessage(container, "Please fill in the email field")
     setErrorField(container, true)
-  } else if (invalidField) {
+  } else if (formValidation.isEmailInvalid(userEmail)) {
     setErrorMessage(container, "Please correct the email")
     setErrorField(container, true)
   } else {
@@ -28,13 +25,10 @@ const isPhoneValid = () => {
   const userPhone = document.getElementById("phone").value
   const container = document.querySelector('[data-name="phone"]')
 
-  const emptyField = formValidation.checkIfEmptyField(userPhone)
-  const invalidField = formValidation.validatePhone(userPhone)
-
-  if (emptyField) {
+  if (formValidation.isFieldEmpty(userPhone)) {
     setErrorMessage(container, "Please fill in the phone field")
     setErrorField(container, true)
-  } else if (invalidField) {
+  } else if (formValidation.isPhoneInvalid(userPhone)) {
     setErrorMessage(container, "Please correct the phone")
     setErrorField(container, true)
   } else {
@@ -49,9 +43,7 @@ const isNameValid = () => {
   const userName = document.getElementById("name").value
   const container = document.querySelector('[data-name="name"]')
 
-  const invalidField = formValidation.validateName(userName)
-
-  if (invalidField) {
+  if (formValidation.isNameInvalid(userName)) {
     setErrorMessage(container, "Please provide no more than 30 characters")
     setErrorField(container, true)
   } else {
@@ -66,13 +58,10 @@ const isMessageValid = () => {
   const userMessage = document.getElementById("message").value
   const container = document.querySelector('[data-name="message"]')
 
-  const emptyField = formValidation.checkIfEmptyField(userMessage)
-  const invalidField = formValidation.validateMessage(userMessage)
-
-  if (emptyField) {
+  if (formValidation.isFieldEmpty(userMessage)) {
     setErrorMessage(container, "Please fill in the message field")
     setErrorField(container, true)
-  } else if (invalidField) {
+  } else if (formValidation.isMessageInvalid(userMessage)) {
     setErrorMessage(container, "Please provide no more than 300 characters")
     setErrorField(container, true)
   } else {

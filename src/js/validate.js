@@ -1,23 +1,23 @@
-export const checkIfEmptyField = (value) => {
+export const isFieldEmpty = (value) => {
   return value === ""
 }
 
-export const validateEmail = (email) => {
+export const isEmailInvalid = (email) => {
   const pattern = "[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]{2}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
 
   return !email.match(pattern)
 }
 
-export const validatePhone = (phone) => {
+export const isPhoneInvalid = (phone) => {
   const pattern = "^[0-9]{9}$"
 
   return !phone.match(pattern)
 }
 
-export const validateName = (name) => {
+export const isNameInvalid = (name) => {
   return name.length > 30
 }
 
-export const validateMessage = (message) => {
+export const isMessageInvalid = (message) => {
   return message.length > 300
 }
