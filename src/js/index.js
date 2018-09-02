@@ -85,13 +85,13 @@ const isFormValid = () => {
 }
 
 const addErrorMessage = (container, message) => {
-  const errorElement = container.querySelector(".error")
+  const errorElement = container.querySelector('[data-name="error"]')
 
   errorElement.innerHTML = message
 }
 
 const removeErrorMessage = (container) => {
-  const errorElement = container.querySelector(".error")
+  const errorElement = container.querySelector('[data-name="error"]')
 
   errorElement.innerHTML = ""
 }
