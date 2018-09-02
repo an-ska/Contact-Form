@@ -19,6 +19,7 @@ let isEmailValid = () => {
     errorEmailElement.innerHTML = "Please correct the email"
     userEmailElement.classList.add("errorField")
   } else {
+    errorEmailElement.innerHTML = ""
     return true
   }
 }
@@ -40,6 +41,7 @@ let isPhoneValid = () => {
     errorPhoneElement.innerHTML = "Please correct the phone"
     userPhoneElement.classList.add("errorField")
   } else {
+    errorPhoneElement.innerHTML = ""
     return true
   }
 }
@@ -57,6 +59,7 @@ let isNameValid = () => {
     errorNameElement.interHTML = "Please provide no more than 30 characters"
     userNameElement.classList.add("errorField")
   } else {
+    errorNameElement.interHTML = ""
     return true
   }
 }
@@ -78,6 +81,7 @@ let isMessageValid = () => {
     errorMessageElement.innerHTML = "Please provide no more than 300 characters"
     userMessageElement.classList.add("errorField")
   } else {
+    errorMessageElement.innerHTML = ""
     return true
   }
 }

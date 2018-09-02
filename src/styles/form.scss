@@ -36,12 +36,15 @@ label {
   }
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   height: 44px;
   border: 1px solid #ccc;
   border-radius: 0;
+  font-size: 14px;
+  color: #000;
 }
 
 textarea {
@@ -49,11 +52,11 @@ textarea {
   height: calc(100% - 25px);
 }
 
-.input-group {
+.inputGroup {
   grid-column: 1/2;
 }
 
-.textarea-group {
+.textareaGroup {
   grid-column: 2/2;
   grid-row: 1 / span 3;
 }
@@ -76,17 +79,18 @@ button {
   color: #be4b49;
   font-size: 14px;
 }
+
 .errorField {
   border: 1px solid #be4b49;
 }
 
 @media(max-width: 800px) {
-  .input-group,
-  .textarea-group {
+  .inputGroup,
+  .textareaGroup {
     grid-column: 1 / span 2;
   }
 
-  .textarea-group {
+  .textareaGroup {
     grid-row: unset;
   }
 }
