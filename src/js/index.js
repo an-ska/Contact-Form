@@ -4,7 +4,6 @@ import "../styles/form.scss"
 import * as formValidation from './validate.js'
 
 const isEmailValid = () => {
-  const userEmailElement = document.getElementById("email")
   const userEmail = document.getElementById("email").value
   const container = document.querySelector('[data-name="email"]')
 
@@ -13,19 +12,19 @@ const isEmailValid = () => {
 
   if (emptyField) {
     setErrorMessage(container, "Please fill in the email field")
-    userEmailElement.classList.add("errorField")
+    setErrorField(container, true)
   } else if (invalidField) {
     setErrorMessage(container, "Please correct the email")
-    userEmailElement.classList.add("errorField")
+    setErrorField(container, true)
   } else {
     setErrorMessage(container, "")
-    userEmailElement.classList.remove("errorField")
+    setErrorField(container, false)
+
     return true
   }
 }
 
 const isPhoneValid = () => {
-  const userPhoneElement = document.getElementById("phone")
   const userPhone = document.getElementById("phone").value
   const container = document.querySelector('[data-name="phone"]')
 
@@ -34,19 +33,19 @@ const isPhoneValid = () => {
 
   if (emptyField) {
     setErrorMessage(container, "Please fill in the phone field")
-    userPhoneElement.classList.add("errorField")
+    setErrorField(container, true)
   } else if (invalidField) {
     setErrorMessage(container, "Please correct the phone")
-    userPhoneElement.classList.add("errorField")
+    setErrorField(container, true)
   } else {
     setErrorMessage(container, "")
-    userPhoneElement.classList.remove("errorField")
+    setErrorField(container, false)
+
     return true
   }
 }
 
 const isNameValid = () => {
-  const userNameElement = document.getElementById("name")
   const userName = document.getElementById("name").value
   const container = document.querySelector('[data-name="name"]')
 
@@ -54,16 +53,16 @@ const isNameValid = () => {
 
   if (invalidField) {
     setErrorMessage(container, "Please provide no more than 30 characters")
-    userNameElement.classList.add("errorField")
+    setErrorField(container, true)
   } else {
     setErrorMessage(container, "")
-    userNameElement.classList.remove("errorField")
+    setErrorField(container, false)
+
     return true
   }
 }
 
 const isMessageValid = () => {
-  const userMessageElement = document.getElementById("message")
   const userMessage = document.getElementById("message").value
   const container = document.querySelector('[data-name="message"]')
 
@@ -72,13 +71,14 @@ const isMessageValid = () => {
 
   if (emptyField) {
     setErrorMessage(container, "Please fill in the message field")
-    userMessageElement.classList.add("errorField")
+    setErrorField(container, true)
   } else if (invalidField) {
     setErrorMessage(container, "Please provide no more than 300 characters")
-    userMessageElement.classList.add("errorField")
+    setErrorField(container, true)
   } else {
     setErrorMessage(container, "")
-    userMessageElement.classList.remove("errorField")
+    setErrorField(container, false)
+
     return true
   }
 }
@@ -96,6 +96,12 @@ const setErrorMessage = (container, message) => {
   const errorElement = container.querySelector(".error")
 
   errorElement.innerHTML = message
+}
+
+const setErrorField = (container, flag) => {
+  const element = container.querySelector('[data-name="input"]').classList
+
+  flag ? element.add("errorField") : element.remove("errorField")
 }
 
 const onFormSubmit = (event) => {
