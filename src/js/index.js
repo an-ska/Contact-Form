@@ -8,16 +8,16 @@ const isEmailValid = () => {
   const container = document.querySelector('[data-name="email"]')
 
   if (formValidation.isFieldEmpty(userEmail)) {
-    setErrorMessage(container, "Please fill in the email field")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please fill in the email field")
+    markField(container)
     return false
   } else if (formValidation.isEmailInvalid(userEmail)) {
-    setErrorMessage(container, "Please correct the email")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please correct the email")
+    markField(container)
     return false
   } else {
-    setErrorMessage(container, "")
-    setErrorField(container, false)
+    removeErrorMessage(container, "")
+    unmarkField(container)
     return true
   }
 }
@@ -27,16 +27,16 @@ const isPhoneValid = () => {
   const container = document.querySelector('[data-name="phone"]')
 
   if (formValidation.isFieldEmpty(userPhone)) {
-    setErrorMessage(container, "Please fill in the phone field")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please fill in the phone field")
+    markField(container)
     return false
   } else if (formValidation.isPhoneInvalid(userPhone)) {
-    setErrorMessage(container, "Please correct the phone")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please correct the phone")
+    markField(container)
     return false
   } else {
-    setErrorMessage(container, "")
-    setErrorField(container, false)
+    removeErrorMessage(container, "")
+    unmarkField(container)
     return true
   }
 }
@@ -46,12 +46,12 @@ const isNameValid = () => {
   const container = document.querySelector('[data-name="name"]')
 
   if (formValidation.isNameInvalid(userName)) {
-    setErrorMessage(container, "Please provide no more than 30 characters")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please provide no more than 30 characters")
+    markField(container)
     return false
   } else {
-    setErrorMessage(container, "")
-    setErrorField(container, false)
+    removeErrorMessage(container, "")
+    unmarkField(container)
     return true
   }
 }
@@ -61,16 +61,16 @@ const isMessageValid = () => {
   const container = document.querySelector('[data-name="message"]')
 
   if (formValidation.isFieldEmpty(userMessage)) {
-    setErrorMessage(container, "Please fill in the message field")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please fill in the message field")
+    markField(container)
     return false
   } else if (formValidation.isMessageInvalid(userMessage)) {
-    setErrorMessage(container, "Please provide no more than 300 characters")
-    setErrorField(container, true)
+    addErrorMessage(container, "Please provide no more than 300 characters")
+    markField(container)
     return false
   } else {
-    setErrorMessage(container, "")
-    setErrorField(container, false)
+    removeErrorMessage(container, "")
+    unmarkField(container)
     return true
   }
 }
@@ -84,16 +84,28 @@ const isFormValid = () => {
   return (validEmail && validPhone && validName && validMessage)
 }
 
-const setErrorMessage = (container, message) => {
+const addErrorMessage = (container, message) => {
   const errorElement = container.querySelector(".error")
 
   errorElement.innerHTML = message
 }
 
-const setErrorField = (container, flag) => {
+const removeErrorMessage = (container, message) => {
+  const errorElement = container.querySelector(".error")
+
+  errorElement.innerHTML = message
+}
+
+const markField = (container) => {
   const element = container.querySelector('[data-name="input"]').classList
 
-  flag ? element.add("errorField") : element.remove("errorField")
+  element.add("errorField")
+}
+
+const unmarkField = (container) => {
+  const element = container.querySelector('[data-name="input"]').classList
+
+  element.remove("errorField")
 }
 
 const onFormSubmit = (event) => {
