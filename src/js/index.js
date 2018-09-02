@@ -31,7 +31,7 @@ const isPhoneValid = () => {
     markField(container)
     return false
   } else if (formValidation.isPhoneInvalid(userPhone)) {
-    addErrorMessage(container, "Please correct the phone")
+    addErrorMessage(container, "Please correct the phone in format xxxxxxxxx")
     markField(container)
     return false
   } else {
