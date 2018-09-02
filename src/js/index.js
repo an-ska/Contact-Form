@@ -121,6 +121,7 @@ const onFormSubmit = (event) => {
     const errorElements = [...document.querySelectorAll(".error")]
     const firstInvalidField = errorElements.find(error => error.innerHTML.length > 0)
 
+    successElement.innerHTML = ""
     firstInvalidField.scrollIntoView({behavior: "smooth"})
   }
 }
