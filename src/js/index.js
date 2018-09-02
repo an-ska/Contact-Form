@@ -2,20 +2,20 @@ import "../styles/index.scss"
 import "../styles/form.scss"
 import * as formValidation from './validate.js';
 
-let isEmailValid = () => {
+const isEmailValid = () => {
   const userEmailElement = document.getElementById("email")
   const userEmail = document.getElementById("email").value
   const errorEmailElement = document.getElementById("errorEmail")
 
-  const emptyEmail = formValidation.checkIfEmptyField(userEmail)
-  const invalidEmail = formValidation.validateEmail(userEmail)
+  const emptyField = formValidation.checkIfEmptyField(userEmail)
+  const invalidField = formValidation.validateEmail(userEmail)
 
   userEmailElement.classList.remove("errorField")
 
-  if (emptyEmail) {
+  if (emptyField) {
     errorEmailElement.innerHTML = "Please fill in the email field"
     userEmailElement.classList.add("errorField")
-  } else if (invalidEmail) {
+  } else if (invalidField) {
     errorEmailElement.innerHTML = "Please correct the email"
     userEmailElement.classList.add("errorField")
   } else {
@@ -24,20 +24,20 @@ let isEmailValid = () => {
   }
 }
 
-let isPhoneValid = () => {
+const isPhoneValid = () => {
   const userPhoneElement = document.getElementById("phone")
   const userPhone = document.getElementById("phone").value
   const errorPhoneElement = document.getElementById("errorPhone")
 
-  const emptyPhone = formValidation.checkIfEmptyField(userPhone)
-  const invalidPhone = formValidation.validatePhone(userPhone)
+  const emptyField = formValidation.checkIfEmptyField(userPhone)
+  const invalidField = formValidation.validatePhone(userPhone)
 
   userPhoneElement.classList.remove("errorField")
 
-  if (emptyPhone) {
+  if (emptyField) {
     errorPhoneElement.innerHTML = "Please fill in the phone field"
     userPhoneElement.classList.add("errorField")
-  } else if (invalidPhone) {
+  } else if (invalidField) {
     errorPhoneElement.innerHTML = "Please correct the phone"
     userPhoneElement.classList.add("errorField")
   } else {
@@ -46,16 +46,16 @@ let isPhoneValid = () => {
   }
 }
 
-let isNameValid = () => {
+const isNameValid = () => {
   const userNameElement = document.getElementById("name")
   const userName = document.getElementById("name").value
   const errorNameElement = document.getElementById("errorName")
 
-  const invalidName = formValidation.validateName(userName)
+  const invalidField = formValidation.validateName(userName)
 
   userNameElement.classList.remove("errorField")
 
-  if (invalidName) {
+  if (invalidField) {
     errorNameElement.interHTML = "Please provide no more than 30 characters"
     userNameElement.classList.add("errorField")
   } else {
@@ -64,20 +64,20 @@ let isNameValid = () => {
   }
 }
 
-let isMessageValid = () => {
+const isMessageValid = () => {
   const userMessageElement = document.getElementById("message")
   const userMessage = document.getElementById("message").value
   const errorMessageElement = document.getElementById("errorMessage")
 
-  const emptyMessage = formValidation.checkIfEmptyField(userMessage)
-  const invalidMessage = formValidation.validateMessage(userMessage)
+  const emptyField = formValidation.checkIfEmptyField(userMessage)
+  const invalidField = formValidation.validateMessage(userMessage)
 
   userMessageElement.classList.remove("errorField")
 
-  if (emptyMessage) {
+  if (emptyField) {
     errorMessageElement.innerHTML = "Please fill in the message field"
     userMessageElement.classList.add("errorField")
-  } else if (invalidMessage) {
+  } else if (invalidField) {
     errorMessageElement.innerHTML = "Please provide no more than 300 characters"
     userMessageElement.classList.add("errorField")
   } else {
